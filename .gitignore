@@ -1,0 +1,46 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Node (Frontend)
+frontend/node_modules/
+frontend/.env
+frontend/.next/
+frontend/build/
+frontend/dist/
+
+# Python (Backend)
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.env
+backend/.venv
+backend/venv/
+backend/env/
+backend/.pytest_cache/
+backend/migrations/__pycache__/
+
+# Cache & logs
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VSCode / IDE
+.vscode/
+.idea/
+*.swp
+
+# Compiled / Coverage
+.coverage
+.tox/
+htmlcov/
+*.egg-info/
+.eggs/
+

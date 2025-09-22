@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <style>
+    body { font-family: 'Arial', sans-serif; background: #5907dd; margin:0; padding:0; color:#fff; }
+    .container { max-width:600px; margin:20px auto; background:#10b166; border-radius:15px; padding:20px; position:relative; overflow:hidden; }
+
+    /* Floating Yellow Dots */
+    .dot { width:10px; height:10px; background:#FFD60A; border-radius:50%; position:absolute; animation: float 5s linear infinite; }
+    @keyframes float { 0% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(180deg); } 100% { transform: translateY(0) rotate(360deg); } }
+
+    .hero { text-align:center; margin-bottom:20px; color: #fff;}
+    .hero img { width:150px; border-radius:50%; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+    h1 { color:#FFD60A; text-align:center; }
+    .details { background:#e07f0f; padding:15px; border-radius:10px; margin:15px 0; }
+    .details p { margin:5px 0; color: #fff;}
+    .portfolio { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:15px; color: #fff; }
+    .portfolio img { width:150px; border-radius:10px; transition: transform 0.3s ease; }
+    .portfolio img:hover { transform: scale(1.1) rotate(-5deg); }
+    .btn { display:inline-block; text-decoration:none; background:#63e428; color:#1A1A2E; padding:12px 25px; border-radius:10px; font-weight:bold; margin-top:15px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Floating Dots -->
+    {% for i in "123456789"|make_list %}
+      <div class="dot" style="top:{{ i|add:"5" }}0px; left:{{ i|add:"3" }}0px; animation-duration:{{ i|add:"2" }}s;"></div>
+    {% endfor %}
+
+    <!-- Hero Image -->
+    <div class="hero">
+      <img src="https://yourdomain.com/static/images/hero_image.png" alt="Hero Image">
+    </div>
+
+    <h1>Hi {{ data.name }}!</h1>
+    <p style="color:white">Thanks for contacting us for <b>{{ data.service }}</b>. Here’s a quick summary:</p>
+
+    <div class="details">
+      <p><strong>Name:</strong> {{ data.name }}</p>
+      <p><strong>Email:</strong> {{ data.email }}</p>
+      <p><strong>Phone:</strong> {{ data.phone }}</p>
+      <p><strong>Service:</strong> {{ data.service }}</p>
+      <p><strong>Comment:</strong> {{ data.comment }}</p>
+    </div>
+
+    <h3 style="color:white">Our Recent Work:</h3>
+    <div class="portfolio ">
+      {% for p in portfolio_items %}
+        <img src="http://127.0.0.1:8000{{ p.image.url }}" alt="{{ p.title }}">
+      {% endfor %}
+    </div>
+
+    <p style="text-align:center;">
+      <a href="https://yourdomain.com" class="btn">Visit Our Website</a>
+    </p>
+  </div>
+</body>
+</html>

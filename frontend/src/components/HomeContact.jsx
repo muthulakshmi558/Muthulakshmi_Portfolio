@@ -9,19 +9,19 @@ const HomeContact = () => {
     {
       icon: <FaPhoneAlt size={28} className="text-purple-400" />,
       title: "Phone",
-      detail: "+123 456 7890",
+      detail: "+91 8754322577",
       color: "purple",
     },
     {
       icon: <FaEnvelope size={28} className="text-pink-400" />,
       title: "Email",
-      detail: "hello@example.com",
+      detail: "muthulakshmi5293@gmail.com",
       color: "pink",
     },
     {
       icon: <FaMapMarkerAlt size={28} className="text-yellow-400" />,
       title: "Location",
-      detail: "London, UK",
+      detail: "Chennai",
       color: "yellow",
     },
   ];

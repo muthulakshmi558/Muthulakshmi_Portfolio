@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-sp%i^f3@6+6^p#58w4hvys+lmj4qo2!@_@+&ie&mys(_f!7-m9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['muthulakshmi-portfolio.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -56,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "https://muthulakshmi-portfolio.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

@@ -1,5 +1,6 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiVercel, SiRender } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -29,32 +30,61 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h3 className="text-xl font-bold text-yellow-400 mb-4">Contact</h3>
-          <p className="text-gray-200 text-sm mb-2">Email: example@gmail.com</p>
-          <p className="text-gray-200 text-sm mb-2">Phone: +91 12345 67890</p>
-          <p className="text-gray-200 text-sm">Location: London, UK</p>
+          <p className="text-gray-200 text-sm mb-2">Email: muthulakshmi5293@gmail.com</p>
+          <p className="text-gray-200 text-sm mb-2">Phone: +91 875 432 2577</p>
+          <p className="text-gray-200 text-sm">Location: Chennai</p>
         </div>
 
         {/* Social */}
         <div>
           <h3 className="text-xl font-bold text-yellow-400 mb-4">Follow Me</h3>
           <div className="flex gap-4 text-2xl text-[#FFD60A]">
-            {[FaLinkedin, FaGithub, FaInstagram, FaTwitter].map((Icon, idx) => (
-              <motion.a
-                key={idx}
-                href="#"
-                whileHover={{ scale: 1.3, color: "#FF6EC7" }}
-                transition={{ duration: 0.3 }}
-              >
-                <Icon />
-              </motion.a>
-            ))}
+            <motion.a
+              href="https://github.com/muthulakshmi558"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.3, color: "#FF6EC7" }}
+              transition={{ duration: 0.3 }}
+            >
+              <FaGithub />
+            </motion.a>
+
+            <motion.a
+              href="https://vercel.com/muthulakshmis-projects-57e18e42"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.3, color: "#FF6EC7" }}
+              transition={{ duration: 0.3 }}
+            >
+              <SiVercel />
+            </motion.a>
+
+            {/* <motion.a
+              href="https://dashboard.render.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.3, color: "#FF6EC7" }}
+              transition={{ duration: 0.3 }}
+            >
+              <SiRender />
+            </motion.a> */}
+
+            <motion.a
+              href="https://www.linkedin.com/in/muthu-lakshmi-497400364/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.3, color: "#FF6EC7" }}
+              transition={{ duration: 0.3 }}
+            >
+              <FaLinkedin />
+            </motion.a>
           </div>
         </div>
       </div>
 
       {/* Bottom Text */}
       <div className="mt-12 text-center text-gray-300 text-sm">
-        &copy; {new Date().getFullYear()} Bolby Doe. All Rights Reserved.
+        &copy; {new Date().getFullYear()} Muthu Lakshmi. All Rights Reserved.
       </div>
     </footer>
   );

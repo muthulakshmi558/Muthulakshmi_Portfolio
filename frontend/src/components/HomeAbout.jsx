@@ -7,22 +7,19 @@ const skills = [
   {
     icon: <FaPython size={36} className="text-yellow-400" />,
     title: "Python",
-    desc: "Core programming language for backend, scripting, and automation.",
-    percent: 95,
+    desc: "Expert in backend development and scripting tasks.",
     color: "yellow-400",
   },
   {
     icon: <SiDjango size={36} className="text-green-400" />,
     title: "Django",
-    desc: "Fullstack framework to build scalable web applications efficiently.",
-    percent: 90,
+    desc: "Build scalable fullstack web applications efficiently.",
     color: "green-400",
   },
   {
     icon: <SiFastapi size={36} className="text-pink-400" />,
     title: "REST API",
-    desc: "Design and build fast, secure, and scalable APIs.",
-    percent: 85,
+    desc: "Design and implement fast, secure, and reliable APIs.",
     color: "pink-400",
   },
 ];
@@ -71,10 +68,22 @@ const HomeAbout = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl font-bold text-center text-white mb-12"
+          className="text-4xl font-bold text-center text-white mb-6"
         >
           About <span className="text-yellow-400">Me</span>
         </motion.h2>
+
+        {/* 3 line description */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="text-center text-gray-300 text-lg max-w-3xl mx-auto mb-12 space-y-2"
+        >
+          <p>⚡ Passionate about creating responsive and modern web applications.</p>
+          <p>🚀 Experienced in backend, REST APIs, and scalable web architectures.</p>
+          <p>🌐 Dedicated to performance optimization and clean code practices.</p>
+        </motion.div>
 
         {/* Skills */}
         <div className="grid md:grid-cols-3 gap-8">
@@ -104,32 +113,23 @@ const HomeAbout = () => {
               <div className="mb-4">{skill.icon}</div>
               <h3 className="text-white font-semibold text-xl mb-2">{skill.title}</h3>
               <p className="text-gray-300 mb-4 text-sm">{skill.desc}</p>
-              <div className="w-full h-2 rounded-full overflow-hidden bg-gray-800">
-                <motion.div
-                  className={`h-2 rounded-full bg-${skill.color}`}
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.percent}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.5, delay: idx * 0.3 }}
-                />
-              </div>
-              <span className={`block mt-1 text-sm text-${skill.color}`}>{skill.percent}%</span>
+              {/* Percentage bar removed */}
             </motion.div>
           ))}
         </div>
 
-          {/* Download CV Button */}
-          <motion.div className="flex justify-center mt-10" whileHover={{ scale: 1.1 }}>
-            <a
-              href="/resume.pdf"   // 📌 static/public folder la resume.pdf save pannunga
-              download="MuthuPandiyan-Resume.pdf"
-              className="bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 
+        {/* Download CV Button */}
+        <motion.div className="flex justify-center mt-10" whileHover={{ scale: 1.1 }}>
+          <a
+            href="/resume.pdf"
+            download="MuthuPandiyan-Resume.pdf"
+            className="bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 
                         text-gray-900 px-8 py-3 rounded-full font-semibold shadow-lg 
                         hover:opacity-90 transition duration-300"
-            >
-              Download CV
-            </a>
-          </motion.div>
+          >
+            Download CV
+          </a>
+        </motion.div>
 
         {/* Stats */}
         <motion.div

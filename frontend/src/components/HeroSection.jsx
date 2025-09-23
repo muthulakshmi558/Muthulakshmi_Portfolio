@@ -14,20 +14,22 @@ const HeroSection = () => {
 
   // Typing effect
   useEffect(() => {
-    const typingInterval = setInterval(() => {
-      if (charIndex < roles[roleIndex].length) {
+    if (charIndex < roles[roleIndex].length) {
+      const timeout = setTimeout(() => {
         setText((prev) => prev + roles[roleIndex][charIndex]);
-        setCharIndex(charIndex + 1);
-      } else {
-        setTimeout(() => {
-          setText("");
-          setCharIndex(0);
-          setRoleIndex((prev) => (prev + 1) % roles.length);
-        }, 1500);
-      }
-    }, 150);
+        setCharIndex((prev) => prev + 1);
+      }, 150);
 
-    return () => clearInterval(typingInterval);
+      return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => {
+        setText("");
+        setCharIndex(0);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      }, 1500);
+
+      return () => clearTimeout(timeout);
+    }
   }, [charIndex, roleIndex]);
 
   // Bubble animation
@@ -58,7 +60,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="h-screen relative overflow-hidden bg-gradient-to-br from-[#2E0249] via-[#570A57] to-[#F806CC]">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#2E0249] via-[#570A57] to-[#F806CC] pt-20 md:pt-24">
       {/* Floating bubbles */}
       <div className="absolute inset-0 z-0">
         {bubbles.map((b) => (
@@ -79,7 +81,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="container mx-auto flex flex-col md:flex-row items-center px-6 relative z-10 h-full justify-center">
+      <div className="container mx-auto flex flex-col md:flex-row items-center px-6 relative z-10 min-h-screen justify-center">
         {/* Left text content */}
         <motion.div
           className="flex-1 text-white text-center md:text-left"
@@ -96,30 +98,51 @@ const HeroSection = () => {
             <span className="blink">|</span>
           </h3>
           <p className="text-gray-200 max-w-md mb-6">
-            Building apps with React, Django, Flask, REST APIs, SQL etc.
+            Building apps with Python, React, Django, Flask, REST APIs, SQL etc.
           </p>
 
           {/* Social Icons */}
           <div className="flex gap-6 mb-6 justify-center md:justify-start text-[#FFD60A]">
-            {[FaLinkedin, FaGithub, SiVercel].map((Icon, idx) => (
-              <motion.a
-                key={idx}
-                href="#"
-                whileHover={{ scale: 1.3 }}
-                animate={{ y: [0, -5, 0] }}
-                transition={{ repeat: Infinity, duration: 2 + idx * 0.3 }}
-              >
-                <Icon size={28} />
-              </motion.a>
-            ))}
+            <motion.a
+              href="https://www.linkedin.com/in/muthu-lakshmi-497400364/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.3 }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+            >
+              <FaLinkedin size={28} />
+            </motion.a>
+
+            <motion.a
+              href="https://github.com/muthulakshmi558"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.3 }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ repeat: Infinity, duration: 2.3 }}
+            >
+              <FaGithub size={28} />
+            </motion.a>
+
+            <motion.a
+              href="https://vercel.com/muthulakshmis-projects-57e18e42"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.3 }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ repeat: Infinity, duration: 2.6 }}
+            >
+              <SiVercel size={28} />
+            </motion.a>
           </div>
 
           {/* Download CV Button */}
           <motion.a
-            href="../assets/files/MuthuLakshmi_CV.pdf" // PDF file should be in public folder
+            href="../assets/files/MuthuPandiyan_CV.pdf"
             download="Muthu_Lakshmi_Resume.pdf"
             className="bg-[#FF6EC7] text-white px-6 py-3 rounded-lg font-semibold shadow-lg inline-block"
-            animate={{ scale: [1, 1.1, 1] }} // Continuous zoom in/out
+            animate={{ scale: [1, 1.1, 1] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
           >
             Download CV

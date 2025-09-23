@@ -57,16 +57,20 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+    {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#2E0249]/90 text-white w-full absolute top-full left-0 shadow-lg">
-          <ul className="hidden md:flex gap-6 text-white font-medium items-center">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#2E0249]/80 backdrop-blur-md text-white shadow-lg">
+          <ul className="flex flex-col gap-6 text-center py-6 font-medium">
             {menuItems.map((item, idx) => (
               <li
                 key={idx}
                 className="relative group cursor-pointer"
               >
-                <Link to={item.path} className="transition-colors duration-300">
+                <Link
+                  to={item.path}
+                  className="transition-colors duration-300 hover:text-yellow-400"
+                  onClick={() => setIsOpen(false)} // close menu after click
+                >
                   {item.name}
                 </Link>
 
@@ -83,12 +87,12 @@ const Navbar = () => {
                 to="/contact"
                 className="bg-[#FFD60A] text-[#2E0249] px-6 py-2 rounded-lg font-semibold shadow-lg 
                 animate-[zoomInOut_2s_ease-in-out_infinite] transition-all duration-500"
+                onClick={() => setIsOpen(false)} // close after click
               >
                 Contact Me
               </Link>
             </li>
           </ul>
-
         </div>
       )}
     </nav>

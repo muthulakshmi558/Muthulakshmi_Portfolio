@@ -6,7 +6,7 @@ const milestones = [
   { date: "2015 Oct", role: "SEO Analyst", icon: <FaSearch />, desc: "Started career in digital marketing." },
   { date: "2018 Apr", role: "SEO Specialist", icon: <FaBullhorn />, desc: "Handled multiple client campaigns." },
   { date: "2019 May", role: "Digital Marketer", icon: <FaUserTie />, desc: "Expanded to overall digital strategies." },
-  { date: "2020 Jun", role: "Senior Digital Marketer", icon: <FaUserTie />, desc: "Led projects & teams." },
+  { date: "2020 Jun", role: "Senior Digital Marketer", icon: <FaUserTie />, desc: "Lead projects & teams." },
   { date: "2025 Feb", role: "UX/UI Designer", icon: <FaPencilRuler />, desc: "Started designing user interfaces." },
   { date: "2025 Sep", role: "Fullstack Developer", icon: <FaLaptopCode />, desc: "Started career in fullstack development." },
 ];

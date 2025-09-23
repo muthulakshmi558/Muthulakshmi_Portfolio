@@ -6,6 +6,7 @@ import HomeSkills from "../components/HomeSkills";
 import HomeContact from "../components/HomeContact";
 import HomeProjects from "../components/HomeProjects";
 import Footer from "../components/Footer";
+import AboutCTA from "../components/AboutCTA"
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <HomeSkills />
       <HomeContact />
       <HomeProjects />
+        <AboutCTA />
       <Footer />
 </>
    
